@@ -23,8 +23,8 @@ namespace FriendlySetPlayTime
         private bool _loadingCurrentLastActivityStepOneFinished;
         private bool _loadingCurrentLastActivityStepTwoFinished;
 
-        private const string RegexVerifyDecimalInput = "^[0-9]+([,.][0-9]+)?$";
-        private const string RegexVerifyDigitsOnly = "^[0-9]+$";
+        private const string RegexVerifyDecimalInput = @"^\+?[0-9]+([,.][0-9]+)?$";
+        private const string RegexVerifyDigitsOnly = @"^\+?[0-9]+$";
 
         public FriendlySetPlayTimeWindow(ILogger logger, IPlayniteAPI playniteAPI, Game selectedGame)
         {
