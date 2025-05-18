@@ -1,0 +1,6 @@
+### Project specific ignores
+## Examples.gitignore
+
+# Source and intermediary files of wiki images not included in project archive - see /wiki for final images
+*.xcf
+*.png
