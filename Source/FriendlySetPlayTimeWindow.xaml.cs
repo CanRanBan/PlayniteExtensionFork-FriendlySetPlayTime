@@ -5,7 +5,6 @@ using System;
 using System.Text.RegularExpressions;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Media;
 using Playnite.SDK;
 using Playnite.SDK.Models;
 
@@ -82,11 +81,9 @@ namespace FriendlySetPlayTime
             string input = inputField.Text;
             if (string.IsNullOrEmpty(input) || Regex.IsMatch(input, RegexDigitsOnly))
             {
-                inputField.ClearValue(BackgroundProperty);
                 return true;
             }
 
-            inputField.Background = Brushes.Red;
             return false;
         }
 
