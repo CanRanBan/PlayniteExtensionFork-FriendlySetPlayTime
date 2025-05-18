@@ -5,6 +5,7 @@ using System;
 using System.Text.RegularExpressions;
 using System.Windows;
 using System.Windows.Controls;
+using System.Windows.Media;
 using Playnite.SDK;
 using Playnite.SDK.Models;
 
@@ -23,6 +24,7 @@ namespace FriendlySetPlayTime
         private bool _loadingCurrentLastActivityStepTwoFinished;
 
         private const string RegexVerifyDecimalInput = "^[0-9]+([,.][0-9]+)?$";
+        private const string RegexVerifyDigitsOnly = "^[0-9]+$";
 
         public FriendlySetPlayTimeWindow(ILogger logger, IPlayniteAPI playniteAPI, Game selectedGame)
         {
@@ -76,20 +78,46 @@ namespace FriendlySetPlayTime
             }
         }
 
-        private static bool VerifyTextBoxInput(TextBox inputField)
+        private static bool VerifyTextBoxInput(TextBox inputField, bool allowDecimalInput)
         {
             string input = inputField.Text;
-            if (Regex.IsMatch(input, RegexVerifyDecimalInput))
+            if (allowDecimalInput)
             {
-                return true;
+                if (Regex.IsMatch(input, RegexVerifyDecimalInput))
+                {
+                    inputField.ClearValue(BorderBrushProperty);
+                    return true;
+                }
+            }
+            else
+            {
+                if (Regex.IsMatch(input, RegexVerifyDigitsOnly))
+                {
+                    inputField.ClearValue(BorderBrushProperty);
+                    return true;
+                }
             }
 
+            inputField.BorderBrush = Brushes.Red;
             return false;
+        }
+
+        private void TextBox_DecimalInput_OnLostFocus(object sender, RoutedEventArgs e)
+        {
+            VerifyTextBoxInput((TextBox)sender, true);
+        }
+
+        private void TextBox_DigitsOnly_OnLostFocus(object sender, RoutedEventArgs e)
+        {
+            VerifyTextBoxInput((TextBox)sender, false);
         }
 
         private bool VerifyPlayTimeInput()
         {
-            return VerifyTextBoxInput(PlayTimeSeconds) && VerifyTextBoxInput(PlayTimeMinutes) && VerifyTextBoxInput(PlayTimeHours) && VerifyTextBoxInput(PlayTimeDays);
+            return VerifyTextBoxInput(PlayTimeSeconds, false)
+                   && VerifyTextBoxInput(PlayTimeMinutes, true)
+                   && VerifyTextBoxInput(PlayTimeHours, true)
+                   && VerifyTextBoxInput(PlayTimeDays, true);
         }
 
         private void SaveButton_OnClick(object sender, RoutedEventArgs e)

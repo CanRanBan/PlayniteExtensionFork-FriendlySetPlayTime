@@ -29,19 +29,19 @@
         <CheckBox Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="8" VerticalAlignment="Center" Margin="0,0,0,5" IsEnabled="False" IsChecked="True" ToolTip="Always enabled.">Set Play Time to:</CheckBox>
         <StackPanel Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2" Orientation="Horizontal">
             <Label Margin="0,0,0,0">Days:</Label>
-            <TextBox x:Name="PlayTimeDays" Text="{friendlySetPlayTime:CultureAwareBinding Days}" AcceptsTab="False" AcceptsReturn="False" MaxLines="1" MaxLength="8" Width="100" TextAlignment="Right" />
+            <TextBox x:Name="PlayTimeDays" Text="{friendlySetPlayTime:CultureAwareBinding Days}" LostFocus="TextBox_DecimalInput_OnLostFocus" AcceptsTab="False" AcceptsReturn="False" MaxLines="1" MaxLength="8" Width="100" TextAlignment="Right" />
         </StackPanel>
         <StackPanel Grid.Row="1" Grid.Column="2" Grid.ColumnSpan="2" Orientation="Horizontal">
             <Label Margin="0,0,0,0">Hours:</Label>
-            <TextBox x:Name="PlayTimeHours" Text="{friendlySetPlayTime:CultureAwareBinding Hours}" AcceptsTab="False" AcceptsReturn="False" MaxLines="1" MaxLength="8" Width="100" TextAlignment="Right" />
+            <TextBox x:Name="PlayTimeHours" Text="{friendlySetPlayTime:CultureAwareBinding Hours}" LostFocus="TextBox_DecimalInput_OnLostFocus" AcceptsTab="False" AcceptsReturn="False" MaxLines="1" MaxLength="8" Width="100" TextAlignment="Right" />
         </StackPanel>
         <StackPanel Grid.Row="1" Grid.Column="4" Grid.ColumnSpan="2" Orientation="Horizontal">
             <Label Margin="0,0,0,0">Minutes:</Label>
-            <TextBox x:Name="PlayTimeMinutes" Text="{friendlySetPlayTime:CultureAwareBinding Minutes}" AcceptsTab="False" AcceptsReturn="False" MaxLines="1" MaxLength="8" Width="100" TextAlignment="Right" />
+            <TextBox x:Name="PlayTimeMinutes" Text="{friendlySetPlayTime:CultureAwareBinding Minutes}" LostFocus="TextBox_DecimalInput_OnLostFocus" AcceptsTab="False" AcceptsReturn="False" MaxLines="1" MaxLength="8" Width="100" TextAlignment="Right" />
         </StackPanel>
         <StackPanel Grid.Row="1" Grid.Column="6" Grid.ColumnSpan="2" Orientation="Horizontal">
             <Label Margin="0,0,0,0">Seconds:</Label>
-            <TextBox x:Name="PlayTimeSeconds" Text="{friendlySetPlayTime:CultureAwareBinding Seconds}" AcceptsTab="False" AcceptsReturn="False" MaxLines="1" MaxLength="8" Width="100" TextAlignment="Right" />
+            <TextBox x:Name="PlayTimeSeconds" Text="{friendlySetPlayTime:CultureAwareBinding Seconds}" LostFocus="TextBox_DigitsOnly_OnLostFocus" AcceptsTab="False" AcceptsReturn="False" MaxLines="1" MaxLength="8" Width="100" TextAlignment="Right" />
         </StackPanel>
 
         <StackPanel Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="8" Orientation="Horizontal" Margin="0,15,0,0">
