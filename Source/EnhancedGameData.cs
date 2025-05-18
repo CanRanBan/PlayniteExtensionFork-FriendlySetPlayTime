@@ -15,28 +15,28 @@ namespace FriendlySetPlayTime
         private readonly ILogger _logger;
         private readonly IPlayniteAPI _playniteAPI;
         private readonly Game _selectedGame;
-        private ulong _days;
-        private ulong _hours;
-        private ulong _minutes;
+        private decimal _days;
+        private decimal _hours;
+        private decimal _minutes;
         private ulong _seconds;
         private string _completionStatus;
         private List<string> _completionStatusList = new List<string>();
         private DateTime _lastActivity;
 
         // Play Time
-        public ulong Days
+        public decimal Days
         {
             get => _days;
             set => SetField(ref _days, value);
         }
 
-        public ulong Hours
+        public decimal Hours
         {
             get => _hours;
             set => SetField(ref _hours, value);
         }
 
-        public ulong Minutes
+        public decimal Minutes
         {
             get => _minutes;
             set => SetField(ref _minutes, value);
@@ -140,23 +140,23 @@ namespace FriendlySetPlayTime
             return SimplifyPlayTime(Days, Hours, Minutes, Seconds);
         }
 
-        private static ulong SimplifyPlayTime(ulong days, ulong hours, ulong minutes, ulong seconds)
+        private static ulong SimplifyPlayTime(decimal days, decimal hours, decimal minutes, ulong seconds)
         {
             ulong playTime = 0;
 
             if (days > 0)
             {
-                playTime += days * 24 * 60 * 60;
+                playTime += (ulong)(days * 24 * 60 * 60);
             }
 
             if (hours > 0)
             {
-                playTime += hours * 60 * 60;
+                playTime += (ulong)(hours * 60 * 60);
             }
 
             if (minutes > 0)
             {
-                playTime += minutes * 60;
+                playTime += (ulong)(minutes * 60);
             }
 
             if (seconds > 0)
