@@ -22,7 +22,7 @@ namespace FriendlySetPlayTime
         private bool _loadingCurrentLastActivityStepOneFinished;
         private bool _loadingCurrentLastActivityStepTwoFinished;
 
-        private const string RegexDigitsOnly = "^[0-9]+$";
+        private const string RegexVerifyDecimalInput = "^[0-9]+([,.][0-9]+)?$";
 
         public FriendlySetPlayTimeWindow(ILogger logger, IPlayniteAPI playniteAPI, Game selectedGame)
         {
@@ -79,7 +79,7 @@ namespace FriendlySetPlayTime
         private static bool VerifyTextBoxInput(TextBox inputField)
         {
             string input = inputField.Text;
-            if (string.IsNullOrEmpty(input) || Regex.IsMatch(input, RegexDigitsOnly))
+            if (Regex.IsMatch(input, RegexVerifyDecimalInput))
             {
                 return true;
             }
