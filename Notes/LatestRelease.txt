@@ -1,0 +1,4 @@
+- Change license to EUPL-1.2 or later.
+- Recognize decimal separator corresponding to current Windows format settings.
+- Allow decimal input for values above seconds.
+- Use lost focus event handler to indicate wrong input.
