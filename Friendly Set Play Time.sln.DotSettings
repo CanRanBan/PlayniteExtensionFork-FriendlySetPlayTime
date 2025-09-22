@@ -14,7 +14,4 @@
 	<s:String
         x:Key="/Default/CodeStyle/FileHeader/FileHeaderVariables/=SimplifiedDescriptionEnd/@EntryIndexedValue"
 	> to simplify the input of play time values</s:String>
-	<s:String
-        x:Key="/Default/CodeStyle/Naming/CSharpNaming/Abbreviations/=API/@EntryIndexedValue"
-	>API</s:String>
 </wpf:ResourceDictionary>
