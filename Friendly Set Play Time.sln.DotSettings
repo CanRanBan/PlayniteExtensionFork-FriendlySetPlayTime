@@ -1,6 +1,20 @@
-﻿<wpf:ResourceDictionary xml:space="preserve" xmlns:wpf="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:s="clr-namespace:System;assembly=mscorlib" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:ss="urn:shemas-jetbrains-com:settings-storage-xaml">
-	<s:String x:Key="/Default/CodeStyle/FileHeader/FileHeaderVariables/=CreationYear/@EntryIndexedValue">2022-</s:String>
-	<s:String x:Key="/Default/CodeStyle/FileHeader/FileHeaderVariables/=SimplifiedDescriptionEnd/@EntryIndexedValue"> to simplify the input of play time values</s:String>
-	<s:String x:Key="/Default/CodeStyle/Naming/CSharpNaming/Abbreviations/=API/@EntryIndexedValue">API</s:String>
-	<s:Boolean x:Key="/Default/Environment/SettingsMigration/IsMigratorApplied/=JetBrains_002EReSharper_002EFeature_002EServices_002ECodeCleanup_002EFileHeader_002EFileHeaderSettingsMigrate/@EntryIndexedValue">True</s:Boolean>
+<wpf:ResourceDictionary
+    xml:space="preserve"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:wpf="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:s="clr-namespace:System;assembly=mscorlib"
+    xmlns:ss="urn:shemas-jetbrains-com:settings-storage-xaml"
+>
+	<s:Boolean
+        x:Key="/Default/Environment/SettingsMigration/IsMigratorApplied/=JetBrains_002EReSharper_002EFeature_002EServices_002ECodeCleanup_002EFileHeader_002EFileHeaderSettingsMigrate/@EntryIndexedValue"
+	>True</s:Boolean>
+	<s:String
+        x:Key="/Default/CodeStyle/FileHeader/FileHeaderVariables/=CreationYear/@EntryIndexedValue"
+	>2022-</s:String>
+	<s:String
+        x:Key="/Default/CodeStyle/FileHeader/FileHeaderVariables/=SimplifiedDescriptionEnd/@EntryIndexedValue"
+	> to simplify the input of play time values</s:String>
+	<s:String
+        x:Key="/Default/CodeStyle/Naming/CSharpNaming/Abbreviations/=API/@EntryIndexedValue"
+	>API</s:String>
 </wpf:ResourceDictionary>
