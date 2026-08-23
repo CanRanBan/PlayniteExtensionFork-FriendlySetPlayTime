@@ -24,6 +24,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="Playnite.SDK" Version="11.0.0-alpha6" />
+    <PackageReference Include="Playnite.SDK" Version="11.0.0-zeta10" />
   </ItemGroup>
 </Project>
