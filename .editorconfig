@@ -1,0 +1,2 @@
+# Async method is not awaited
+dotnet_diagnostic.CS4014.severity = error
